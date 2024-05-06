@@ -48,7 +48,6 @@ public class HomeController : Controller
         listaFornecedores.Add(fornecedor5);
 
         ViewBag.listaFornecedores = listaFornecedores;
-        
 
         return View();
     }

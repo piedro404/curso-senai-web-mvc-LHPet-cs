@@ -1,8 +1,58 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "LH Pet";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+
+    <h1> >>> Sistema de Controle Interno - LH Pet <<< </h1>
+
+            <table class="table table-hover table-sm table-bordered table-sm caption-top">
+                <caption>Lista de clientes</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope=" col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Paciente (pet)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in @ViewBag.listaClientes)
+                    {
+                        <tr>
+                            <th scope="row">@item.Id</th>
+                            <th>@item.Nome</th>
+                            <th>@item.Cpf</th>
+                            <th>@item.Email</th>
+                            <th>@item.Paciente</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+            <table class="table table-hover table-sm table-bordered table-sm caption-top">
+                <caption>Lista de fornecedores</caption>
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CNPJ</th>
+                        <th scope="col">E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in @ViewBag.listaFornecedores)
+                    {
+                        <tr>
+                            <th scope="row">@item.Id</th>
+                            <th>@item.Nome</th>
+                            <th>@item.Cnpj</th>
+                            <th>@item.Email</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
 </div>
